@@ -4,11 +4,13 @@
       :section="name" 
       :rows="rows" 
       :groups="groups"></app-main-hall>
+    <app-legenda :groups='groups'></app-legenda>
   </div>
 </template>
 
 <script>
 import MainHallVue from "./components/MainHall.vue";
+import LegendaVue from './components/Legenda.vue';
 export default {
   name: "app",
   data() {
@@ -69,7 +71,8 @@ export default {
     };
   },
   components: {
-    appMainHall: MainHallVue
+    appMainHall: MainHallVue,
+    appLegenda: LegendaVue,
   }
 };
 </script>
