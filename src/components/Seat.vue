@@ -1,8 +1,5 @@
 <template>
-  <div 
-    class="text-center seat" 
-    :class="divClasses" 
-  >
+  <div class="text-center seat" :class="divClasses">
     <h4>{{currentSeat}}</h4>
   </div>
 </template>
@@ -13,7 +10,7 @@ export default {
     return {
       attachOrange: false,
       attachRed: false,
-      isTaken: true,
+      isAvailable: true
     };
   },
   props: ["currentSeat", "row", "groups"],
@@ -23,7 +20,7 @@ export default {
       return {
         group1: this.attachRed,
         group2: this.attachOrange,
-        available: this.isTaken,
+        available: this.isAvailable
       };
     }
   },
@@ -38,17 +35,17 @@ export default {
           if (group.id === "+31611111111") {
             this.attachOrange = true;
             this.attachRed = false;
-            // this.isTaken = true
+            this.isAvailable = false;
             return;
           } else if (group.id === "+31622222222") {
             this.attachOrange = false;
             this.attachRed = true;
-            // this.isTaken = true
+            this.isAvailable = false;
             return;
           } else {
             this.attachOrange = false;
             this.attachRed = false;
-            // this.isTaken = false
+            this.isAvailable = true;
             return;
           }
         }
@@ -75,6 +72,6 @@ h4 {
   margin-top: 25%;
 }
 .available {
-
+  background-color: green;
 }
 </style>

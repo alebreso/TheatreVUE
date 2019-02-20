@@ -36,5 +36,6 @@ export default {
   position: relative;
   background-color: #dcdcdc;
   padding-bottom: 25px;
+  border-radius: 20px
 }
 </style>

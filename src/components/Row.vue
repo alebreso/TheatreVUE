@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="row">
     <hr>
     <!-- v-for in row and render Seat component -->
-    <div class="left">row {{row.row}}</div>
+    <div class="row-name">Row {{row.row}}</div>
     <app-seat
       v-for="({seat},i) in row.seats"
       :currentSeat="seat"
@@ -32,9 +32,12 @@ export default {
 </script>
 
 <style>
-.left {
-  position: absolute;
-  left: 3px;
+.row-name {
+  display: block;
+  position: relative;
+  text-align: center;
+  border: 1px dashed black;
+  width: 100%;
 }
 
 .group1 {
