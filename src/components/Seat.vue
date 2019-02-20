@@ -33,13 +33,13 @@ export default {
           parseInt(seat.seat) === parseInt(currentSeat)
         ) {
           if (group.id === "+31611111111") {
-            this.attachOrange = true;
-            this.attachRed = false;
+            this.attachOrange = false;
+            this.attachRed = true;
             this.isAvailable = false;
             return;
           } else if (group.id === "+31622222222") {
-            this.attachOrange = false;
-            this.attachRed = true;
+            this.attachOrange = true;
+            this.attachRed = false;
             this.isAvailable = false;
             return;
           } else {

@@ -41,10 +41,10 @@ export default {
 }
 
 .group1 {
-  background-color: orange;
+  background-color: red;
 }
 
 .group2 {
-  background-color: red;
+  background-color: orange;
 }
 </style>
