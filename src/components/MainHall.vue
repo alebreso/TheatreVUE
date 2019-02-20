@@ -2,16 +2,20 @@
   <div class="container hall text-center">
     <h3>{{sectionToUpperCase()}}</h3>
     <!-- v-for in rows and render a row component -->
-    <app-Row v-for="(row, i) in rows" :row="row" :groups="groups" :key="i"></app-Row>
+    <app-Row 
+      v-for="(row, i) in rows" 
+      :row="row" 
+      :groups="groups" 
+      :key="i"></app-Row>
   </div>
 </template>
+
 <script>
 import RowVue from "./Row.vue";
 export default {
   props: ["section", "rows", "groups"],
   data: function() {
-    return {
-    };
+    return {};
   },
   components: {
     appRow: RowVue
@@ -19,10 +23,11 @@ export default {
   methods: {
     sectionToUpperCase() {
       return this.section.toUpperCase();
-    },
+    }
   }
 };
 </script>
+
 <style scoped>
 .hall {
   margin-top: 30px;
@@ -30,5 +35,6 @@ export default {
   border: 1px solid black;
   position: relative;
   background-color: #dcdcdc;
+  padding-bottom: 25px;
 }
 </style>

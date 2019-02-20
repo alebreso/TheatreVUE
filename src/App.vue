@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <app-main-hall :section="name" :rows="rows" :groups="groups"></app-main-hall>
+    <app-main-hall 
+      :section="name" 
+      :rows="rows" 
+      :groups="groups"></app-main-hall>
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <hr>
     <!-- v-for in row and render Seat component -->
     <div class="left">row {{row.row}}</div>
     <app-seat
@@ -10,9 +11,9 @@
       :key="i"
       :class="{orange:attachOrange, red:attachRed}"
     ></app-seat>
-    <hr>
   </div>
 </template>
+
 <script>
 import SeatVue from "./Seat.vue";
 export default {
@@ -26,20 +27,21 @@ export default {
   components: {
     appSeat: SeatVue
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
+
 <style>
 .left {
   position: absolute;
   left: 3px;
 }
 
-.orange {
+.group1 {
   background-color: orange;
 }
-.red {
+
+.group2 {
   background-color: red;
 }
 </style>
