@@ -10,40 +10,33 @@ export default {
     };
   },
   props: ["currentSeat", "row", "groups"],
-  methods: {
-  },
+  methods: {},
   created() {
-    const currentSeat = this.currentSeat
+    const currentSeat = this.currentSeat;
+    this.attachRed = false;
+    this.attachOrange = false;
     this.groups.forEach(group => {
-        group.seats.forEach(seat => {
-          console.log("row.row === seat.row");
-          console.log(`${parseInt(this.row.row)} === ${parseInt(seat.row)}`);
-          if (parseInt(this.row.row) === parseInt(seat.row)) {
-            console.log('inside I if')
-            console.log("seat.seat === currentSeat");
-            console.log(`${seat.seat} === ${currentSeat}`);
-            if (parseInt(seat.seat) === parseInt(currentSeat)) {
-              console.log('inside II if')
-              console.log("seat.seat === currentSeat");
-              console.log(`${group.id} === +31611111111`);
-              if (group.id === "+31611111111") {
-                console.log('inside III if')
-                this.attachOrange = true
-                this.attachRed = false
-                return 
-              }
-              else {
-                this.attachOrange = false
-                this.attachRed = true
-                return 
-              }
+      group.seats.forEach(seat => {
+        if (parseInt(this.row.row) === parseInt(seat.row)) {
+          if (parseInt(seat.seat) === parseInt(currentSeat)) {
+            if (group.id === "+31611111111") {
+              this.attachOrange = true;
+              this.attachRed = false;
+              return;
+            } else if (group.id === "+31622222222") {
+              this.attachOrange = false;
+              this.attachRed = true;
+              return;
+            } else {
+              this.attachOrange = false;
+              this.attachRed = false;
+              return;
             }
           }
-        });
+        }
       });
-      // this.attachRed=false
-      // this.attachOrange=false
-      return
+    });
+    return;
   }
 };
 </script>
