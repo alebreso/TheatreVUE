@@ -15,7 +15,6 @@
 </template>
 <script>
 import SeatVue from "./Seat.vue";
-import _ from 'lodash'
 export default {
   props: ["row", "groups"],
   data: function() {
